@@ -1,3 +1,6 @@
+import { Button } from '@material-ui/core';
+import ProductFeature from 'features/Product';
+import { useSnackbar } from 'notistack';
 import { useEffect } from 'react';
 import { Route } from 'react-router';
 import { NavLink, Switch } from 'react-router-dom';
@@ -17,15 +20,23 @@ function App() {
 
     fetchProducts();
   }, []);
+
+  const { enqueueSnackbar } = useSnackbar();
+  const showNoti = () => {
+    enqueueSnackbar('Register successfully', { variant: 'success' });
+  };
   return (
     <div className="App">
       <Header />
-      <h1>Home page</h1>
+      {/* <h1>Home page</h1>
+
+      <Button onClick={showNoti}>Show noti</Button> */}
 
       <Switch>
         <Route path="/" component={CounterFeature} exact />
         <Route path="/todos" component={TodoFeature} />
         <Route path="/albums" component={AlbumFeature} />
+        <Route path="/products" component={ProductFeature} />
         <Route component={NotFound} />
       </Switch>
     </div>
