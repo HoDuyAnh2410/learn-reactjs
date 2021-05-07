@@ -1,9 +1,8 @@
-import { Button } from '@material-ui/core';
 import ProductFeature from 'features/Product';
 import { useSnackbar } from 'notistack';
 import { useEffect } from 'react';
 import { Route } from 'react-router';
-import { NavLink, Switch } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 import productApi from './api/productApi';
 import Header from './components/Header';
 import NotFound from './components/NotFound';
@@ -22,6 +21,7 @@ function App() {
   }, []);
 
   const { enqueueSnackbar } = useSnackbar();
+
   const showNoti = () => {
     enqueueSnackbar('Register successfully', { variant: 'success' });
   };

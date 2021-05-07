@@ -1,4 +1,3 @@
-import { FormHelperText } from '@material-ui/core';
 import FormControl from '@material-ui/core/FormControl';
 import IconButton from '@material-ui/core/IconButton';
 import InputAdornment from '@material-ui/core/InputAdornment';
@@ -20,6 +19,7 @@ PasswordField.propTypes = {
 
 function PasswordField(props) {
   const { form, name, label, disable } = props;
+
   const [showPassword, setShowPassword] = useState(false);
 
   const toggleShowPassword = () => {

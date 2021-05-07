@@ -1,5 +1,3 @@
-import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 import {
   Box,
   Container,
@@ -9,6 +7,8 @@ import {
   Typography,
 } from '@material-ui/core';
 import productApi from 'api/productApi';
+import React, { useEffect, useState } from 'react';
+import ProductList from '../components/ProductSkeletonList';
 import ProductSkeletonList from '../components/ProductSkeletonList';
 
 ListPage.propTypes = {};
@@ -19,9 +19,10 @@ const useStyles = makeStyles((theme) => ({
     width: '250px',
   },
   right: {
-    flex: '1 1 auto',
+    flex: '1 1 0',
   },
 }));
+
 function ListPage(props) {
   const classes = useStyles();
 
@@ -54,7 +55,7 @@ function ListPage(props) {
                 {loading ? (
                   <ProductSkeletonList />
                 ) : (
-                  <Typography>ProductList</Typography>
+                  <ProductList data={productList} />
                 )}
               </Paper>
             </Grid>

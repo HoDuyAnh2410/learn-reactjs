@@ -8,8 +8,10 @@ const productApi = {
       !params._page || params._page <= 1
         ? 0
         : (params._page - 1) * (params._limit || 50);
+
     // Remove un-needed key
     delete newParams._page;
+
     // Fetch product list + count
     const productList = await axiosClient.get('/products', {
       params: newParams,
@@ -17,6 +19,7 @@ const productApi = {
     const count = await axiosClient.get('/products/count', {
       params: newParams,
     });
+
     // Build response and return
     return {
       data: productList,
