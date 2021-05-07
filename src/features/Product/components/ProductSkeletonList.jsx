@@ -3,22 +3,22 @@ import PropTypes from 'prop-types';
 import { Box, Grid } from '@material-ui/core';
 import { Skeleton } from '@material-ui/lab';
 
-ProductList.propTypes = {
-  data: PropTypes.array,
+ProductSkeletonList.propTypes = {
+  length: PropTypes.number,
 };
 
-ProductList.defaultProps = {
-  data: [],
+ProductSkeletonList.defaultProps = {
+  length: 9,
 };
 
-function ProductList({ data }) {
+function ProductSkeletonList({ length }) {
   return (
     <Box>
       <Grid container>
-        {data.map((product) => (
-          <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}>
+        {Array.from(new Array(length)).map((x, index) => (
+          <Grid item key={index} xs={12} sm={6} md={4} lg={3}>
             <Box padding={1}>
-              <Skeleton variant="rect" width="100%" height={118} />
+              <Skeleton variant="rect" width="100%" height={200} />
               <Skeleton />
               <Skeleton width="60%" />
             </Box>
@@ -29,4 +29,4 @@ function ProductList({ data }) {
   );
 }
 
-export default ProductList;
+export default ProductSkeletonList;
