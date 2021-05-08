@@ -9,18 +9,9 @@ import AlbumFeature from './features/Song';
 import TodoFeature from './features/Todo';
 
 function App() {
-  const { enqueueSnackbar } = useSnackbar();
-
-  const showNoti = () => {
-    enqueueSnackbar('Register successfully', { variant: 'success' });
-  };
   return (
     <div className="App">
       <Header />
-      {/* <h1>Home page</h1>
-
-      <Button onClick={showNoti}>Show noti</Button> */}
-
       <Switch>
         <Route path="/" component={CounterFeature} exact />
         <Route path="/todos" component={TodoFeature} />
