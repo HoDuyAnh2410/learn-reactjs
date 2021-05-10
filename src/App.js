@@ -1,5 +1,5 @@
+import CartFeature from 'features/Cart';
 import ProductFeature from 'features/Product';
-import { useSnackbar } from 'notistack';
 import { Route } from 'react-router';
 import { Switch } from 'react-router-dom';
 import Header from './components/Header';
@@ -17,6 +17,7 @@ function App() {
         <Route path="/todos" component={TodoFeature} />
         <Route path="/albums" component={AlbumFeature} />
         <Route path="/products" component={ProductFeature} />
+        <Route path="/cart" component={CartFeature} />
         <Route component={NotFound} />
       </Switch>
     </div>

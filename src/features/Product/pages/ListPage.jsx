@@ -43,7 +43,7 @@ function ListPage(props) {
       _limit: Number.parseInt(params._page) || 9,
       _sort: params._sort || 'salePrice:ASC',
       isPromotion: params.isPromotion === 'true',
-      isFreeship: params.isFreeship === 'true',
+      isFreeShip: params.isFreeShip === 'true',
     };
   }, [location.search]);
 
